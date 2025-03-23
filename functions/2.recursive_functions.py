@@ -85,10 +85,14 @@ print(sumtree(lst))
 
 # Example 5: Recursion verses queues and stacks
 # - python performs recursion using stack, each function call is placed on the stack and popped off when the function returns
-# - stack is a last-in-first-out (LIFO) data structure
 # - We can implement explicit stack or queue to simulate recursion and understand inner workings of recursion
 
-def sumtree_stack(L):
+# Example 5(a): first in first out (FIFO) queue also known as breadth-first search (BFS)
+# - queue is a data structure that allows us to add and remove elements in a first-in-first-out manner
+# - instead of issuing recursive calls, an item is added to the end of the queue and removed from the front
+# - the list is processed level by level, breadth-first search (BFS).
+# - this is a way of simulating recursion without using recursion
+def sumtree_queue(L):
     tot = 0
     items = list(L)
     while items:
@@ -98,3 +102,85 @@ def sumtree_stack(L):
         else:
             items.extend(front)
     return tot
+
+print(f"using queue: {sumtree_queue(lst)}")
+
+
+# Example 5(b): last in first out (LIFO) stack also known as depth-first search (DFS)
+# - This simulates traversal recursion closely, it simply pops an item and adds to the front of the stack
+# - this is a way of simulating recursion without using recursion
+
+def sumtree_stack(L):
+    tot = 0
+    items = list(L)
+    while items:
+        front = items.pop(0)
+        if not isinstance(front, list):
+            tot += front
+        else:
+            items[:0] = front
+    return tot 
+
+# conclusion:
+# 1. Why use recursion?
+# Recursive are more natural compared to stack and queue, they are more readable and easier to write
+# Recursion also automate the stack management, unless we have a good reason to do otherwise, we should use recursion
+# Some programs may require FIFO queue, e.g:
+"""
+For example, in **web crawling**, pages are often assigned scores based on their content, 
+and a FIFO queue ensures that pages are processed in the order they were discovered. 
+This approach helps maintain a logical progression, ensuring that higher-level pages 
+(such as homepages) are processed before their deeper links, leading to a more structured and efficient crawl.
+"""
+
+# 2. Dos and Don'ts of recursion
+"""
+Large recursion apps require critically thought out implimentation.
+a. Avoid cycles & repeats: Recursion should not be used in a cycle or repeat, it will lead to infinite loop.
+   - For simple cases like traversing a hierachical list, cycles isn't a problem.
+   - For complex cases like cyclic graph data it is a problem. It would lead to infinite loop running out of call-stack space(stack overflow/ maximum recursion depth exceeded).
+   - We can use a list,dictionary to keep track of visited nodes/ state to avoid cycles.
+
+b. Record paths taken later use.
+   - In some cases, we may need to record the path taken to reach a solution, we can use a list or dictionary to keep track of the path.
+   - Python has default stack limit which can be extended using sys.setrecursionlimit(limit) but it is not recommended.
+   - We can use a stack to keep track of the path taken.
+
+
+c. Expand stack space instead of queus and stacks.
+"""
+
+print("Example 6: Stack overflow due to cycles and repeats")
+
+# This is an example of a cyclic graph, it will lead to infinite loop
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E']
+}
+
+def visit(node):
+    print(node)
+    for neighbor in graph[node]:
+        visit(neighbor)
+
+# visit('A')  # This will lead to infinite loop leading to a RecursionError: maximum recursion depth exceeded 
+
+# To avoid cycles, we can use a list to keep track of visited nodes
+def visit(node, visited=None):
+    if visited is None: # initialize visited set for the first call
+        visited = set()  # set is more efficient for membership testing and does not allow duplicates
+
+    if node in visited: # this checks if the node has been visited before
+        return
+    
+    print(node)
+    visited.add(node) # add the node to the visited set so that we don't visit it again
+
+    for neighbor in graph[node]:
+        visit(neighbor, visited)
+
+visit('A')

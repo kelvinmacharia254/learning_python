@@ -1,21 +1,21 @@
 """
 Recursive are functions that call themselves either directly or indirectly in order to loop.
 
-This functions allows us to traverse structures that have arbitrary  and upredictable shape and depth e.g:
-    planning routes
-    analyzing language
-    crawling links on the web
+This functions allows us to traverse structures that have arbitrary and upredictable shape and depth e.g:
+    - planning routes
+    - analyzing language
+    - crawling links on the web
 
 Recursive functions can even be used as alternative to simple loops and iterations though they are not always the best choice in terms
-of simplisity and performance.
+of simplicity and performance.
 
 """
 
 # Example 1: sumation of list. This a simple example of recursive function, loops would be more efficient saving memory and time
-            # recursive functions requires fresh local scope for each call and also execution is slower than loopsbecause of multiple function calls
+            # recursive functions requires fresh local scope for each call and also execution is slower than loops because of multiple function calls
 print("Example 1") 
 def sum_list(lst):
-    if len(lst) == 0:
+    if len(lst) == 0: # base case, when the list is empty, base case is important to avoid infinite loop by breaking the recursion
         return 0
     else:
         return lst[0] + sum_list(lst[1:])
@@ -32,7 +32,7 @@ print(sum_list_ternary_operator([1,2,3,4,5]))
 # we can have a type-agnostic summing functions as long as list elements support addition e.g. strings concatenation
 
 def sum_list_type_agnostic1(l):
-    if len(l)== 1:
+    if len(l)== 1: # base case, when the list has only one element
         return l[0]
     return l[0] + sum_list_type_agnostic1(l[1:])
 

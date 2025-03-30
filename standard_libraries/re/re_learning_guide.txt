@@ -1,0 +1,66 @@
+Deep Mastery Plan (4–6 Hours)
+🕒 Step 1: Core Functions & Their Purpose (1 Hour)
+Goal: Understand how Python interacts with regex.
+📖 Read these sections in the Python Docs:
+✅ re.search() – Find first match anywhere in the string.
+✅ re.match() – Match only from the beginning of the string.
+✅ re.findall() – Find all matches in a string.
+✅ re.finditer() – Like findall(), but returns iterators instead of strings.
+✅ re.sub() – Replace pattern matches.
+✅ re.split() – Split a string using regex patterns.
+✅ re.compile() – Precompile regex for efficiency.
+
+Practice: 🔹 Write a small script using re.search(), re.findall(), and re.sub() to modify text.
+
+🕒 Step 2: Pattern Syntax & Special Sequences (1.5 Hours)
+Goal: Master the regex building blocks.
+📖 Read these sections in the Python Docs:
+✅ \d, \w, \s – Digits, word chars, spaces.
+✅ . (any character), *, +, ?, {m,n} – Quantifiers.
+✅ ^, $ – Start & end of a string.
+✅ Character sets ([a-zA-Z], [0-9]) and negation ([^abc]).
+✅ Escaping special characters (\. to match a dot, etc.).
+
+Practice: 🔹 Extract numbers from "Order123 was placed on 2024-03-29" using \d+.
+🔹 Extract words from "Hello, World! Python_Regex" using \w+.
+🔹 Test greedy vs non-greedy patterns on "aaaab" with a+ vs a+?.
+
+🕒 Step 3: Grouping, Backreferences & Lookarounds (1.5 Hours)
+Goal: Learn advanced regex techniques.
+📖 Read these sections:
+✅ Grouping: () – Capture parts of a pattern.
+✅ Backreferences: \1, \2 – Refer to previous captures.
+✅ Named groups: (?P<name>pattern), (?P=name).
+✅ Lookaheads: (?=pattern), (?!pattern).
+✅ Lookbehinds: (?<=pattern), (?<!pattern).
+
+Practice: 🔹 Extract domains from emails like "kelvin@example.com" using @(.+)$.
+🔹 Find repeated words in "this is is a test" using \b(\w+)\b\s+\1.
+🔹 Validate dates (YYYY-MM-DD) using \b\d{4}-\d{2}-\d{2}\b.
+
+🕒 Step 4: Real-World Applications & Optimization (1 Hour)
+Goal: Apply regex to practical problems.
+📖 Explore these applications:
+✅ Extract emails from text ([\w.-]+@[\w.-]+).
+✅ Extract phone numbers (\+?\d{1,3}[-.\s]?\d{3}[-.\s]?\d{4}).
+✅ Validate passwords ((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}).
+✅ Optimize regex performance using re.compile().
+
+Practice: 🔹 Extract email addresses from a paragraph of text.
+🔹 Validate Kenyan phone numbers (\+2547\d{8} or 07\d{8}).
+🔹 Write a regex that ensures a strong password.
+
+🕒 Step 5: Challenges & Mastery (1 Hour)
+Goal: Solidify knowledge with regex challenges.
+💡 Try these challenges (or let me set some for you later):
+1️⃣ Write a regex to find all IPv4 addresses in a log file.
+2️⃣ Extract hashtags from a Twitter post.
+3️⃣ Find all words in a string that start with a capital letter.
+4️⃣ Replace all dates (YYYY/MM/DD) with (DD-MM-YYYY).
+5️⃣ Extract YouTube video IDs from URLs (https://www.youtube.com/watch?v=VIDEO_ID).
+
+🔥 Additional Resources
+📌 Python Regex Docs
+📌 regex101.com – Interactive regex testing
+📌 Pythex.org – Another online regex tester
+📌 RegExr – Great for learning and testing

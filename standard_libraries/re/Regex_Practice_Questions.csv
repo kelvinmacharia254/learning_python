@@ -1,0 +1,13 @@
+step,topic,question,function
+Step 1: Core Functions,Basic Matching with re.search(),"IF a string is 'The price is 100 dollars', how would you use `re.search()` to find the first sequence of digits?",re.search()
+Step 1: Core Functions,Extracting All Matches,"IF a string is 'Email: test@example.com, Backup: admin@site.org', how would you use `re.findall()` to extract all email addresses?",re.findall()
+Step 1: Core Functions,Replacing Substrings,"IF a string is 'foo123bar456', how would you use `re.sub()` to remove all numbers?",re.sub()
+Step 2: Pattern Syntax,Digits and Words,"IF a string is 'Order123 was placed on 2024-03-29', how would you extract all numbers using `\d+`?",re.findall()
+Step 2: Pattern Syntax,Words Using \w+,"IF a string is 'Hello, World! Python_Regex', how would you extract all word-like tokens?",re.findall()
+Step 2: Pattern Syntax,Greedy vs Non-Greedy,"IF a string is 'aaaab', compare what `a+` vs `a+?` would return using `re.search()`.",re.search()
+Step 3: Grouping and Lookarounds,Email Domain Extraction,"IF a string is 'Contact me at kelvin@example.com', how would you extract the domain after '@'?",re.search()
+Step 3: Grouping and Lookarounds,Repeated Words Detection,"IF a string is 'this is is a test', how would you detect the repeated word using backreference?",re.search()
+Step 3: Grouping and Lookarounds,Date Validation,"IF a string is 'Event date: 2024-03-29', how would you extract a valid date in YYYY-MM-DD format?",re.findall()
+Step 4: Real-World Applications,Extracting Emails,"IF a string is 'Users: kelvin@example.com, info@domain.org', how would you extract all email addresses?",re.findall()
+Step 4: Real-World Applications,Phone Number Matching,"IF a string is 'Call +254-712-345-678 or 0712 345 678', how would you extract phone numbers using regex?",re.findall()
+Step 4: Real-World Applications,Password Validation,"IF a password should have at least 1 digit, 1 uppercase, 1 lowercase, and be 8+ chars long, how would you validate it?",re.fullmatch()

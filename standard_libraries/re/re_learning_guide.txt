@@ -10,7 +10,8 @@ Goal: Understand how Python interacts with regex.
 ✅ re.split() – Split a string using regex patterns.
 ✅ re.compile() – Precompile regex for efficiency.
 
-Practice: 🔹 Write a small script using re.search(), re.findall(), and re.sub() to modify text.
+Practice: 
+🔹 Write a small script using re.search(), re.findall(), and re.sub() to modify text.
 
 🕒 Step 2: Pattern Syntax & Special Sequences (1.5 Hours)
 Goal: Master the regex building blocks.
@@ -21,7 +22,8 @@ Goal: Master the regex building blocks.
 ✅ Character sets ([a-zA-Z], [0-9]) and negation ([^abc]).
 ✅ Escaping special characters (\. to match a dot, etc.).
 
-Practice: 🔹 Extract numbers from "Order123 was placed on 2024-03-29" using \d+.
+Practice: 
+🔹 Extract numbers from "Order123 was placed on 2024-03-29" using \d+.
 🔹 Extract words from "Hello, World! Python_Regex" using \w+.
 🔹 Test greedy vs non-greedy patterns on "aaaab" with a+ vs a+?.
 
@@ -34,7 +36,8 @@ Goal: Learn advanced regex techniques.
 ✅ Lookaheads: (?=pattern), (?!pattern).
 ✅ Lookbehinds: (?<=pattern), (?<!pattern).
 
-Practice: 🔹 Extract domains from emails like "kelvin@example.com" using @(.+)$.
+Practice: 
+🔹 Extract domains from emails like "kelvin@example.com" using @(.+)$.
 🔹 Find repeated words in "this is is a test" using \b(\w+)\b\s+\1.
 🔹 Validate dates (YYYY-MM-DD) using \b\d{4}-\d{2}-\d{2}\b.
 
@@ -46,7 +49,8 @@ Goal: Apply regex to practical problems.
 ✅ Validate passwords ((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}).
 ✅ Optimize regex performance using re.compile().
 
-Practice: 🔹 Extract email addresses from a paragraph of text.
+Practice: 
+🔹 Extract email addresses from a paragraph of text.
 🔹 Validate Kenyan phone numbers (\+2547\d{8} or 07\d{8}).
 🔹 Write a regex that ensures a strong password.
 
